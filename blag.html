@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Calc. - الموقع الرسمي والتحميل</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { background: #0f0f12; color: #e0e0e0; font-family: sans-serif; line-height: 1.8; margin: 0; padding: 0; text-align: right; }
+        
+        /* شريط التنقل العلوي */
+        .navbar { background: #16161a; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2a2a32; position: sticky; top: 0; z-index: 1000; }
+        .logo { color: #a370f7; font-weight: bold; font-size: 1.2em; text-decoration: none; direction: ltr; }
+        .nav-links { display: flex; gap: 15px; }
+        .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9em; transition: 0.3s; cursor: pointer; }
+        .nav-links a:hover, .nav-links a.active { color: #a370f7; }
+
+        /* القسم الرئيسي */
+        .hero { padding: 40px 20px; text-align: center; background: linear-gradient(180deg, #16161a 0%, #0f0f12 100%); border-bottom: 1px solid #2a2a32; }
+        .hero h1 { color: #fff; font-size: 2em; margin-bottom: 10px; }
+        .hero h1 span { color: #a370f7; direction: ltr; display: inline-block; }
+        .hero p.subtitle { color: #aaa; font-size: 1em; max-width: 600px; margin: 0 auto 25px auto; }
+        
+        /* زر التحميل */
+        .download-container { margin: 25px 0; }
+        .download-btn { display: inline-block; background: #6200ea; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 15px rgba(98,0,234,0.4); transition: 0.3s; }
+        .download-btn:hover { background: #7c4dff; }
+
+        /* المحتوى والشرح */
+        .content { padding: 30px 20px; max-width: 750px; margin: auto; }
+        
+        .section-box {
+            background: #16161a;
+            border: 1px solid #2a2a32;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 600px) {
+            .section-box {
+                flex-direction: row;
+                text-align: right;
+                gap: 20px;
+            }
+            .section-box.rev {
+                flex-direction: row-reverse;
+                text-align: right;
+            }
+        }
+
+        .section-box img, .section-box video {
+            max-width: 220px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #000;
+            border: 2px solid #3a3a45;
+            flex-shrink: 0;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        @media (min-width: 600px) {
+            .section-box img, .section-box video {
+                margin-bottom: 0;
+            }
+        }
+
+        .section-info h2 { color: #a370f7; margin-top: 0; font-size: 1.3em; }
+        .section-info h2 span { direction: ltr; display: inline-block; }
+        .section-info p { color: #bbb; font-size: 0.95em; line-height: 1.7; margin: 0; }
+
+        /* شبكة المميزات */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; width: 100%; }
+        .feature-box { background: #0f0f12; border: 1px solid #2a2a32; padding: 15px; border-radius: 10px; text-align: right; }
+        .feature-box h4 { color: #fff; margin: 0 0 5px 0; font-size: 0.95em; }
+        .feature-box p { color: #aaa; margin: 0; font-size: 0.85em; }
+
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+
+        .back-link { color: #a370f7; text-decoration: none; display: inline-block; margin-top: 20px; font-weight: bold; cursor: pointer; }
+        .copyright { font-size: 0.8em; color: #666; text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #1a1a1f; }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a onclick="showPage('home')" class="logo">Fitness Calc.</a>
+        <nav class="nav-links">
+            <a onclick="showPage('contact')">تواصل معنا</a>
+            <a onclick="showPage('projects')">التطبيق</a>
+            <a onclick="showPage('home')" id="link-home" class="active">الرئيسية</a>
+        </nav>
+    </header>
+
+    <div id="page-home" class="page-section active">
+        <div class="hero">
+            <h1>تحميل تطبيق <span>Fitness Calc.</span> (APK)</h1>
+            <p class="subtitle">المساعد الذكي الأول لحساب السعرات الحرارية ومعادلات الأيض بدقة هندسية تامة.</p>
+            
+            <div class="download-container">
+                <a href="https://drive.google.com/file/d/19IKvjMlzZDE8J-mj6PieqOE3aeBcu1pK/view?usp=sharing" target="_blank" class="download-btn">تنزيل النسخة الآمنة (APK)</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section-box">
+                <img src="pick.jpg" alt="واجهة اللغات">
+                <div class="section-info">
+                    <h2>دعم متعدد اللغات (<span>EN / AR</span>)</h2>
+                    <p>يبدأ التطبيق بواجهة ترحيبية أنيقة تتيح للمستخدم اختيار اللغة المفضلة لديه (العربية أو الإنجليزية) بكل سلاسة لتجربة استخدام مخصصة بالكامل.</p>
+                </div>
+            </div>
+
+            <div class="section-box rev">
+                <video src="screen-video.mp4" autoplay loop muted playsinline></video>
+                <div class="section-info">
+                    <h2>إدخال البيانات الفيزيائية</h2>
+                    <p>يوفر التطبيق واجهة إدخال ذكية وسريعة تشمل الوزن، الطول، العمر، الجنس، ومستوى النشاط اليومي، لحساب دقيق ومبني على أسس علمية معتمدة.</p>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <img src="phot.jpg" alt="التقرير اليومي والمغذيات">
+                <div class="section-info">
+                    <h2>التقرير اليومي والمغذيات (<span>Macros</span>)</h2>
+                    <p>يعرض نتائج فورية تتضمن معدل الأيض الأساسي (BMR)، سعرات الثبات، سعرات التنشيف، بالإضافة إلى الحصص الدقيقة من البروتين، الكربوهيدرات، والدهون.</p>
+                </div>
+            </div>
+
+            <div class="section-box" style="flex-direction: column; text-align: right;">
+                <div class="section-info" style="width: 100%;">
+                    <h2>أبرز المميزات والخصائص التقنية</h2>
+                    <div class="features-grid">
+                        <div class="feature-box">
+                            <h4>📊 حسابات دقيقة</h4>
+                            <p>معادلات فيزيائية موثوقة لحساب السعرات.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>🥩 توزيع المغذيات</h4>
+                            <p>تحديد دقيق لكميات البروتين والكارب.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>⚡ أداء عالي</h4>
+                            <p>خفيف جداً ولا يستهلك موارد الجهاز.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>🎨 تصميم عصري</h4>
+                            <p>وضع مظلم (Dark Mode) مريح للعين.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-contact" class="page-section">
+        <div class="content" style="text-align: center; padding-top: 50px;">
+            <h1 style="color: #fff;">تواصل مع المطوّر</h1>
+            <p style="color: #aaa;">يسعدني تلقي استفساراتكم ومقترحاتكم عبر حساب التطبيق الرسمي.</p>
+            <div style="margin-top: 30px;">
+                <a href="https://instagram.com/fitnesscalc30" target="_blank" class="download-btn">📸 زيارة حساب الإنستغرام (fitnesscalc30)</a>
+            </div>
+            <br>
+            <a onclick="showPage('home')" class="back-link">← العودة للرئيسية</a>
+        </div>
+    </div>
+
+    <div id="page-projects" class="page-section">
+        <div class="content" style="text-align: center; padding-top: 50px;">
+            <h1 style="color: #fff;">المشاريع والتطبيقات</h1>
+            <p style="color: #aaa;">تطبيق Fitness Calc هو المشروع الهندسي الأول ضمن سلسلة أدوات الصحة واللياقة البدنية.</p>
+            <a onclick="showPage('home')" class="back-link">← العودة للرئيسية</a>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>جميع الحقوق محفوظة © 2026 | التطبيق الرسمي Fitness Calc.</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
+            document.getElementById('page-' + pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
